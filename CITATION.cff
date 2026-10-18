@@ -1,28 +1,25 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite both the software and the paper."
-title: "scijigsaw: evidence-typed probabilistic reasoning and hypothesis navigation for protein-complex assembly"
-version: 3.0.0
-date-released: 2026-08-23
-license: MIT
-repository-code: "https://github.com/219plgit/scijigsaw"
-url: "https://github.com/219plgit/scijigsaw/releases/tag/v3.0.0"
-# doi: to be added after acceptance, when the release is archived in Zenodo
+message: "If you use Protein Complex Jigsaw, please cite the software and accompanying manuscript."
+title: "Protein Complex Jigsaw"
+type: software
 authors:
   - family-names: "Liò"
     given-names: "Pietro"
-    affiliation: "Department of Computer Science and Technology, University of Cambridge"
+    email: "pl219@cam.ac.uk"
   - family-names: "Liò"
     given-names: "Maria Teresa"
-    affiliation: "Department of Computer Science and Technology, University of Cambridge"
+version: "4.0.0"
+date-released: "2026-10-18"
+url: "https://github.com/219plgit/protein-complex-jigsaw"
+repository-code: "https://github.com/219plgit/protein-complex-jigsaw"
+license: MIT
 preferred-citation:
   type: article
-  title: "Scientific Jigsaw: evidence-typed probabilistic reasoning and hypothesis navigation for protein-complex assembly"
-  year: 2026
-  journal: "PLOS (submitted)"   # update journal/volume/DOI on acceptance
+  title: "Protein Complex Jigsaw: from typed evidence to inspectable assembly, variant perturbation and misassembly"
   authors:
     - family-names: "Liò"
       given-names: "Pietro"
-      affiliation: "Department of Computer Science and Technology, University of Cambridge"
     - family-names: "Liò"
       given-names: "Maria Teresa"
-      affiliation: "Department of Computer Science and Technology, University of Cambridge"
+  year: 2026
+  notes: "Manuscript submitted to PLOS Computational Biology; update journal metadata after acceptance."

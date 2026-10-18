@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use Protein Complex Jigsaw, please cite the software and accompanying manuscript."
+title: "Protein Complex Jigsaw"
+type: software
+authors:
+  - family-names: "Liò"
+    given-names: "Pietro"
+    email: "pl219@cam.ac.uk"
+  - family-names: "Liò"
+    given-names: "Maria Teresa"
+version: "4.0.0"
+date-released: "2026-10-18"
+url: "https://github.com/219plgit/protein-complex-jigsaw"
+repository-code: "https://github.com/219plgit/protein-complex-jigsaw"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Protein Complex Jigsaw: from typed evidence to inspectable assembly, variant perturbation and misassembly"
+  authors:
+    - family-names: "Liò"
+      given-names: "Pietro"
+    - family-names: "Liò"
+      given-names: "Maria Teresa"
+  year: 2026
+  notes: "Manuscript submitted to PLOS Computational Biology; update journal metadata after acceptance."
