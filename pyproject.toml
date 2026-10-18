@@ -3,9 +3,9 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "scijigsaw"
-version = "3.0.0"
-description = "Evidence-typed probabilistic reasoning and hypothesis navigation for protein-complex assembly"
+name = "protein-complex-jigsaw"
+version = "4.0.0"
+description = "Protein Complex Jigsaw: typed-evidence reasoning for inspectable assembly, variant perturbation and misassembly"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -13,8 +13,7 @@ authors = [
   { name = "Pietro Liò", email = "pl219@cam.ac.uk" },
   { name = "Maria Teresa Liò" },
 ]
-keywords = ["structural bioinformatics", "protein interfaces",
-            "assembly order", "visualisation", "linear extensions"]
+keywords = ["structural bioinformatics", "protein complexes", "assembly", "variant interpretation", "misassembly"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
@@ -37,6 +36,14 @@ dependencies = [
 dev = ["pytest>=7.0", "pytest-cov"]
 
 [project.scripts]
+pcjigsaw-count   = "scijigsaw.cli:_assembly"
+pcjigsaw-bench   = "scijigsaw.cli:_bench"
+pcjigsaw-extract = "scijigsaw.cli:_extract"
+pcjigsaw-render  = "scijigsaw.cli:_render"
+pcjigsaw-tiles   = "scijigsaw.cli:_tiles"
+pcjigsaw-variant = "pcjigsaw.cli:variant_main"
+
+# Backward-compatible command aliases for existing users and old notebooks.
 scijigsaw-count   = "scijigsaw.cli:_assembly"
 scijigsaw-bench   = "scijigsaw.cli:_bench"
 scijigsaw-extract = "scijigsaw.cli:_extract"
@@ -44,9 +51,9 @@ scijigsaw-render  = "scijigsaw.cli:_render"
 scijigsaw-tiles   = "scijigsaw.cli:_tiles"
 
 [project.urls]
-Repository = "https://github.com/219plgit/scijigsaw"
-Issues     = "https://github.com/219plgit/scijigsaw/issues"
-Release    = "https://github.com/219plgit/scijigsaw/releases/tag/v3.0.0"
+Repository = "https://github.com/219plgit/protein-complex-jigsaw"
+Issues     = "https://github.com/219plgit/protein-complex-jigsaw/issues"
+Release    = "https://github.com/219plgit/protein-complex-jigsaw/releases/tag/v4.0.0"
 
 [tool.setuptools.packages.find]
 where = ["src"]
