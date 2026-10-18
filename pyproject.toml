@@ -11,7 +11,7 @@ requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
   { name = "Pietro Liò", email = "pl219@cam.ac.uk" },
-  { name = "Maria Teresa Liò" },
+  { name = "Maria Teresa Liò", email = "maria.lio@edu.unifi.it" },
 ]
 keywords = ["structural bioinformatics", "protein complexes", "assembly", "variant interpretation", "misassembly"]
 classifiers = [
