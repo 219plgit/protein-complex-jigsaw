@@ -8,7 +8,7 @@ authors:
     email: "pl219@cam.ac.uk"
   - family-names: "Liò"
     given-names: "Maria Teresa"
-     mail: "maria.lio@edu.unifi.it"
+    email: "maria.lio@edu.unifi.it"
 version: "4.0.0"
 date-released: "2026-10-18"
 url: "https://github.com/219plgit/protein-complex-jigsaw"
