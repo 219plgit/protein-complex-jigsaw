@@ -20,7 +20,9 @@ preferred-citation:
   authors:
     - family-names: "Liò"
       given-names: "Pietro"
+      email: "pl219@cam.ac.uk"
     - family-names: "Liò"
       given-names: "Maria Teresa"
+      email: "maria.lio@edu.unifi.it"
   year: 2026
   notes: "Manuscript submitted to PLOS Computational Biology; update journal metadata after acceptance."
