@@ -1,0 +1,2 @@
+{"name": "yeast eIF3 core (literature contacts)", "seed": "Prt1", "query": ["Tif34", "Tif35"],
+ "source": "Contacts as encoded in the PCJ manuscript (Politis et al. 2015 topology). kd_nM and site columns are placeholders for the tile renderer and are not used in any count."}

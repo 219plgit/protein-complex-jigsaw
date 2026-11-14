@@ -17,8 +17,20 @@ from .misassembly import (
     MisassemblyAssessment,
     assess_misassembly,
 )
+from .flow import (
+    ExactSeedFlow,
+    ExactMergerFlow,
+    FlowSummary,
+    SeedStep,
+    MergerSplit,
+    ModelFlow,
+    compare_model_flows,
+    plackett_luce_step_weight,
+    interface_potential,
+    effective_number,
+)
 
-__version__ = "4.0.0"
+__version__ = "4.2.0rc1"
 __all__ = list(_legacy_all) + [
     "Perturbation",
     "VariantImpactReport",
@@ -26,4 +38,14 @@ __all__ = list(_legacy_all) + [
     "OffPathwayRule",
     "MisassemblyAssessment",
     "assess_misassembly",
+    "ExactSeedFlow",
+    "ExactMergerFlow",
+    "FlowSummary",
+    "SeedStep",
+    "MergerSplit",
+    "ModelFlow",
+    "compare_model_flows",
+    "plackett_luce_step_weight",
+    "interface_potential",
+    "effective_number",
 ]

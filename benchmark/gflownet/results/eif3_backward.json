@@ -1,0 +1,56 @@
+[
+ {
+  "policy": "uniform histories (counting P_B)",
+  "Neff": 6.0,
+  "Prt1_Tif34": 0.5,
+  "Prt1_Tif34_Tif35": 0.167,
+  "Prt1_Tif32": 0.5,
+  "top": "Tif32 \u2192 Nip1 \u2192 Tif34 \u2192 Tif35",
+  "top_p": 0.167
+ },
+ {
+  "policy": "uniform disassembly",
+  "Neff": 5.657,
+  "Prt1_Tif34": 0.5,
+  "Prt1_Tif34_Tif35": 0.25,
+  "Prt1_Tif32": 0.5,
+  "top": "Tif32 \u2192 Nip1 \u2192 Tif34 \u2192 Tif35",
+  "top_p": 0.25
+ },
+ {
+  "policy": "interface, beta=0.5",
+  "Neff": 4.868,
+  "Prt1_Tif34": 0.285,
+  "Prt1_Tif34_Tif35": 0.128,
+  "Prt1_Tif32": 0.715,
+  "top": "Tif32 \u2192 Nip1 \u2192 Tif34 \u2192 Tif35",
+  "top_p": 0.428
+ },
+ {
+  "policy": "interface, beta=1",
+  "Neff": 3.452,
+  "Prt1_Tif34": 0.132,
+  "Prt1_Tif34_Tif35": 0.056,
+  "Prt1_Tif32": 0.868,
+  "top": "Tif32 \u2192 Nip1 \u2192 Tif34 \u2192 Tif35",
+  "top_p": 0.611
+ },
+ {
+  "policy": "interface, beta=2",
+  "Neff": 1.758,
+  "Prt1_Tif34": 0.018,
+  "Prt1_Tif34_Tif35": 0.008,
+  "Prt1_Tif32": 0.982,
+  "top": "Tif32 \u2192 Nip1 \u2192 Tif34 \u2192 Tif35",
+  "top_p": 0.86
+ },
+ {
+  "policy": "interface, beta=4",
+  "Neff": 1.079,
+  "Prt1_Tif34": 0.0,
+  "Prt1_Tif34_Tif35": 0.0,
+  "Prt1_Tif32": 1.0,
+  "top": "Tif32 \u2192 Nip1 \u2192 Tif34 \u2192 Tif35",
+  "top_p": 0.988
+ }
+]

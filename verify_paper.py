@@ -190,13 +190,20 @@ def sec_deletion() -> None:
 def sec_attribution() -> None:
     s = "evidence attribution"
     seeded = TypedModel(V=V_EIF3, C=C_DECL, P=P_SEEDED)
-    exp = {("Tif34", "Tif35"): 1.0, ("Tif32", "Nip1"): 1.0,
+    # Seed-anchored additions must contact the current complex (Proposition 1).
+    # Under that rule the eIF3 contact graph alone fixes the 6 orders, so every
+    # declared prerequisite is redundant (0 bits). The earlier 1-bit values came
+    # from the prerequisite-only rule, which let Tif35 or Nip1 join a complex
+    # they do not touch.
+    check(s, "seeded orders, contacts only", 6,
+          seeded_F(TypedModel(V=V_EIF3, C=C_DECL, P=()), "Prt1")(frozenset()))
+    exp = {("Tif34", "Tif35"): 0.0, ("Tif32", "Nip1"): 0.0,
            ("Prt1", "Tif34"): 0.0, ("Prt1", "Tif32"): 0.0}
     for p, e in exp.items():
         r = decision_value_relation(seeded, "Prt1", drop_P=[p], label=str(p))
         check(s, f"delta H2 for {p[0]}->{p[1]} (bits)", e, round(r["bits_removed"], 3), tol=2e-3)
     r = decision_value_relation(seeded, "Prt1", drop_P=list(P_SEEDED), label="all")
-    check(s, "all prerequisites jointly (bits)", 2.0, round(r["bits_removed"], 3), tol=2e-3)
+    check(s, "all prerequisites jointly (bits)", 0.0, round(r["bits_removed"], 3), tol=2e-3)
 
 
 def sec_cases() -> None:

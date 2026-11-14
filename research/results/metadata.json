@@ -1,0 +1,26 @@
+{
+  "seed": 20261114,
+  "graph_sizes": [
+    6,
+    8,
+    9
+  ],
+  "graphs_per_size": 8,
+  "frozen_models": [
+    "_seed19",
+    "_seed20",
+    "_seed21"
+  ],
+  "beta": 1.0,
+  "scope": "Exploratory teacher-distillation sanity check, NOT trajectory-balance GFlowNet validation.",
+  "evaluation": "All nontrivial reachable subset states; macro average by graph; 2 graphs/size insufficient inferential claims",
+  "time_s": 12.04,
+  "limitations": [
+    "Synthetic contact graphs without protein-specific prerequisites or exclusions",
+    "Only local conditional split distributions, not full trajectory distribution",
+    "No held-out experimentally measured intermediates",
+    "Graphs share synthetic generation regime with original training",
+    "Model trained at 6-8 chains; 9 chains extrapolates",
+    "Small number of graphs; no confidence interval claimed"
+  ]
+}

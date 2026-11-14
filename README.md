@@ -89,6 +89,19 @@ python scripts/reproduce_figures.py
 
 The repository also contains the structure-extraction benchmark, AlphaFold ensemble analyses, cryo-EM observation-set analyses, probabilistic extensions and the educational tile renderer used in the manuscript and supplement.
 
+**Teaching pack.** `education/` turns any small model into printable tile kits, a school activity and an undergraduate worksheet with answer key, with every number computed by exact enumeration (`pcjigsaw-teach vamp2 my_pack/`, `pcjigsaw-teach pack eif3 my_pack/`; `pcjigsaw-teach check` recomputes every answer-key number against the paper). The code is the `pcjigsaw.education` subpackage of the release. See `education/README.md`.
+
+## Experimental hierarchical graph-attention inference (research preview)
+
+The optional research code in [`research/`](research/README.md) includes a
+synthetic-trained PCJ-HGTFlow **prototype**, synthetic teacher comparisons,
+and a coordinate-derived 7ARC interface-graph workflow. It uses a truncated
+candidate-action shortlist and does **not** yet implement a validated
+trajectory-balance GFlowNet or estimate cellular assembly frequencies.
+The stable exact solver remains the default for tractable problems.
+
+Install optional dependencies with `python -m pip install -e '.[hgtflow]'`.
+
 ## Exactness and interpretation
 
 Counts are exact **for the declared model**. They are not measured cellular pathway frequencies. Likewise, normalized branch shares in a weighted mechanism space are model-derived shares of remaining weighted completions, not direct estimates of biological population frequencies.
@@ -99,9 +112,9 @@ The physical/graphical jigsaw representation is an explanatory encoding of decla
 
 Project repository: https://github.com/219plgit/protein-complex-jigsaw
 
-Manuscript title:
+Manuscript working title:
 
-**Protein Complex Jigsaw: from typed evidence to inspectable assembly, variant perturbation and misassembly**
+**Protein Complex Jigsaw: evidence-constrained exact and hierarchical inference of protein-complex assembly pathways**
 
 ## Citation
 

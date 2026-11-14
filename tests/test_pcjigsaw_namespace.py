@@ -1,6 +1,6 @@
 def test_pcjigsaw_namespace_imports():
     import pcjigsaw
-    assert pcjigsaw.__version__ == "4.0.0"
+    assert pcjigsaw.__version__ == "4.2.0rc1"
     assert hasattr(pcjigsaw, "Assembly")
     assert hasattr(pcjigsaw, "analyse_perturbation")
 

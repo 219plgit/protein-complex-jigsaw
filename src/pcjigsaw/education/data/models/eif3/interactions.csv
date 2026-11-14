@@ -1,0 +1,5 @@
+protein_a,protein_b,kd_nM,site_on_a,site_on_b
+Prt1,Tif32,10,to_Tif32,to_Prt1
+Prt1,Tif34,10,to_Tif34,to_Prt1
+Tif32,Nip1,10,to_Nip1,to_Tif32
+Tif34,Tif35,10,to_Tif35,to_Tif34

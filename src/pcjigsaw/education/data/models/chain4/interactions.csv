@@ -1,0 +1,4 @@
+protein_a,protein_b,kd_nM,site_on_a,site_on_b
+A,B,10,to_B,to_A
+B,C,10,to_C,to_B
+C,D,10,to_D,to_C

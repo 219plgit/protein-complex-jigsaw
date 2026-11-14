@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "protein-complex-jigsaw"
-version = "4.0.0"
-description = "Protein Complex Jigsaw: typed-evidence reasoning for inspectable assembly, variant perturbation and misassembly"
+version = "4.2.0rc1"
+description = "Protein Complex Jigsaw: exact generative flow over admissible protein-complex assembly mechanisms"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -13,7 +13,7 @@ authors = [
   { name = "Pietro Liò", email = "pl219@cam.ac.uk" },
   { name = "Maria Teresa Liò", email = "maria.lio@edu.unifi.it" },
 ]
-keywords = ["structural bioinformatics", "protein complexes", "assembly", "variant interpretation", "misassembly"]
+keywords = ["bioinformatics", "protein complexes", "assembly", "GFlowNet", "generative flow", "variant interpretation"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
@@ -34,6 +34,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0", "pytest-cov"]
+hgtflow = ["torch>=2.1", "scipy>=1.10"]
 
 [project.scripts]
 pcjigsaw-count   = "scijigsaw.cli:_assembly"
@@ -42,6 +43,7 @@ pcjigsaw-extract = "scijigsaw.cli:_extract"
 pcjigsaw-render  = "scijigsaw.cli:_render"
 pcjigsaw-tiles   = "scijigsaw.cli:_tiles"
 pcjigsaw-variant = "pcjigsaw.cli:variant_main"
+pcjigsaw-teach   = "pcjigsaw.education.cli:main"
 
 # Backward-compatible command aliases for existing users and old notebooks.
 scijigsaw-count   = "scijigsaw.cli:_assembly"
@@ -53,10 +55,13 @@ scijigsaw-tiles   = "scijigsaw.cli:_tiles"
 [project.urls]
 Repository = "https://github.com/219plgit/protein-complex-jigsaw"
 Issues     = "https://github.com/219plgit/protein-complex-jigsaw/issues"
-Release    = "https://github.com/219plgit/protein-complex-jigsaw/releases/tag/v4.0.0"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"pcjigsaw.education" = ["data/*.json", "data/models/*.json", "data/models/*/*.csv", "data/models/*/*.json",
+                        "data/vamp2_board/*.csv", "data/gflownet/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

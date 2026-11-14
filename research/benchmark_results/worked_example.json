@@ -1,0 +1,133 @@
+{
+  "proteins": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "interface_scores": {
+    "AB": 0.8,
+    "AC": 0.5,
+    "BC": 0.9,
+    "CD": -0.4,
+    "DE": 0.7,
+    "DF": 0.45,
+    "EF": 1.0
+  },
+  "reward": "beta=1, exp(mean interface weight across merge x log(1 + number of crossing interfaces)); product over merges",
+  "cases": {
+    "intact": {
+      "contacts": 7,
+      "admissible_complete_merger_trees": 117,
+      "log_partition": 7.07341769580283,
+      "Shannon_entropy_bits": 6.869240129245519,
+      "effective_number_of_trees": 116.90883326238126,
+      "subcomplex_support": {
+        "AB": 0.19905318917360287,
+        "ABC": 0.20620280804195762,
+        "DE": 0.1977294153210696,
+        "DEF": 0.20702452834667925,
+        "CD": 0.3251323793564362,
+        "EF": 0.20644867191609778
+      },
+      "top_root_splits": [
+        [
+          "A | BCDEF",
+          0.20193708121923076
+        ],
+        [
+          "ABCDE | F",
+          0.1977294153210696
+        ],
+        [
+          "ABCDF | E",
+          0.19074534147478242
+        ],
+        [
+          "ACDEF | B",
+          0.19064627710022955
+        ],
+        [
+          "ABC | DEF",
+          0.07772489489158911
+        ]
+      ]
+    },
+    "AC_contact_deleted": {
+      "contacts": 6,
+      "admissible_complete_merger_trees": 70,
+      "log_partition": 6.425960175896558,
+      "Shannon_entropy_bits": 6.128659275977331,
+      "effective_number_of_trees": 69.96974244079469,
+      "subcomplex_support": {
+        "AB": 0.3289262127327794,
+        "ABC": 0.22928099689413003,
+        "DE": 0.20106750066756243,
+        "DEF": 0.21605963509246784,
+        "CD": 0.3289262127327794,
+        "EF": 0.20993395651781982
+      },
+      "top_root_splits": [
+        [
+          "A | BCDEF",
+          0.32892621273277933
+        ],
+        [
+          "ABCDE | F",
+          0.20106750066756243
+        ],
+        [
+          "ABCDF | E",
+          0.1939655210735278
+        ],
+        [
+          "AB | CDEF",
+          0.11464049844706498
+        ],
+        [
+          "ABC | DEF",
+          0.08642385403698713
+        ]
+      ]
+    },
+    "EF_contact_deleted": {
+      "contacts": 6,
+      "admissible_complete_merger_trees": 94,
+      "log_partition": 6.3754214563319955,
+      "Shannon_entropy_bits": 6.554085749478072,
+      "effective_number_of_trees": 93.96722567103834,
+      "subcomplex_support": {
+        "AB": 0.19366159630869811,
+        "ABC": 0.19187045549275406,
+        "DE": 0.2447697729483092,
+        "DEF": 0.17035250034734312,
+        "CD": 0.3191870455492753,
+        "EF": 0.0
+      },
+      "top_root_splits": [
+        [
+          "ABCDF | E",
+          0.2447697729483092
+        ],
+        [
+          "ABCDE | F",
+          0.2447697729483092
+        ],
+        [
+          "A | BCDEF",
+          0.19646737470118183
+        ],
+        [
+          "ACDEF | B",
+          0.1854823954683821
+        ],
+        [
+          "AB | CDEF",
+          0.06455386543623273
+        ]
+      ]
+    }
+  }
+}

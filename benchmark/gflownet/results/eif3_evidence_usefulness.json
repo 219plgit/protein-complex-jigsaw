@@ -1,0 +1,71 @@
+{
+ "interface residues": {
+  "Prt1-Tif34": {
+   "S0": 0.5,
+   "U": -0.7488,
+   "S_inf": 0.0,
+   "scale": 0.611,
+   "finite_difference_U": -0.7488
+  },
+  "Prt1-Tif34-Tif35": {
+   "S0": 0.25,
+   "U": -0.4767,
+   "S_inf": 0.0,
+   "scale": 0.611,
+   "finite_difference_U": -0.4767
+  },
+  "Prt1-Tif32": {
+   "S0": 0.5,
+   "U": 0.7488,
+   "S_inf": 1.0,
+   "scale": 0.611,
+   "finite_difference_U": 0.7488
+  }
+ },
+ "relation count": {
+  "Prt1-Tif34": {
+   "S0": 0.5,
+   "U": 0.4841,
+   "S_inf": 1.0,
+   "scale": 0.3873,
+   "finite_difference_U": 0.4841
+  },
+  "Prt1-Tif34-Tif35": {
+   "S0": 0.25,
+   "U": 0.6455,
+   "S_inf": 1.0,
+   "scale": 0.3873,
+   "finite_difference_U": 0.6455
+  },
+  "Prt1-Tif32": {
+   "S0": 0.5,
+   "U": -0.4841,
+   "S_inf": 0.0,
+   "scale": 0.3873,
+   "finite_difference_U": -0.4841
+  }
+ },
+ "relation count, redundant prerequisite removed": {
+  "Prt1-Tif34": {
+   "S0": 0.5,
+   "U": 0.0,
+   "S_inf": 0.5,
+   "scale": 0.0,
+   "finite_difference_U": 0.0
+  },
+  "Prt1-Tif34-Tif35": {
+   "S0": 0.25,
+   "U": 0.0,
+   "S_inf": 0.25,
+   "scale": 0.0,
+   "finite_difference_U": 0.0
+  },
+  "Prt1-Tif32": {
+   "S0": 0.5,
+   "U": 0.0,
+   "S_inf": 0.5,
+   "scale": 0.0,
+   "finite_difference_U": 0.0
+  }
+ }
+}

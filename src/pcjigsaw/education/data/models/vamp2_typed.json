@@ -1,0 +1,9 @@
+{"name": "VAMP2 seating model (paper: typed SNARE encoding, Supplementary Table S1, plus SNAP25 before Syntaxin-1A)",
+ "seed": "VAMP2",
+ "contacts": [["VAMP2", "SNAP25"], ["VAMP2", "Syntaxin-1A"], ["VAMP2", "Complexin"],
+              ["SNAP25", "Syntaxin-1A"], ["SNAP25", "Syt-1"], ["Syntaxin-1A", "Complexin"],
+              ["Syntaxin-1A", "Syt-1"], ["Syntaxin-1A", "Munc18-1"],
+              ["VAMP2", "Synaptophysin"], ["VAMP2", "SNCA"]],
+ "prerequisites": [["VAMP2", "Complexin"], ["Syntaxin-1A", "Complexin"], ["SNAP25", "Syt-1"],
+                   ["Syntaxin-1A", "Syt-1"], ["Syntaxin-1A", "Munc18-1"], ["SNAP25", "Syntaxin-1A"]],
+ "expected": {"seed_anchored": 252, "merger_trees": 536}}

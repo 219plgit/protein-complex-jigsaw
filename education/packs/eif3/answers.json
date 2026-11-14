@@ -1,0 +1,499 @@
+{
+ "model": {
+  "model": "yeast eIF3 core (literature contacts)",
+  "source": "Contacts as encoded in the PCJ manuscript (Politis et al. 2015 topology). kd_nM and site columns are placeholders for the tile renderer and are not used in any count.",
+  "seed": "Prt1",
+  "components": [
+   "Prt1",
+   "Tif32",
+   "Nip1",
+   "Tif34",
+   "Tif35"
+  ],
+  "contacts": [
+   [
+    "Prt1",
+    "Tif32"
+   ],
+   [
+    "Prt1",
+    "Tif34"
+   ],
+   [
+    "Nip1",
+    "Tif32"
+   ],
+   [
+    "Tif34",
+    "Tif35"
+   ]
+  ],
+  "independent_cycles": 0,
+  "query": [
+   "Tif34",
+   "Tif35"
+  ],
+  "all_orders_from_seed": 24,
+  "seeded": {
+   "count": 6,
+   "histories": [
+    [
+     "Prt1",
+     "Tif32",
+     "Nip1",
+     "Tif34",
+     "Tif35"
+    ],
+    [
+     "Prt1",
+     "Tif32",
+     "Tif34",
+     "Nip1",
+     "Tif35"
+    ],
+    [
+     "Prt1",
+     "Tif32",
+     "Tif34",
+     "Tif35",
+     "Nip1"
+    ],
+    [
+     "Prt1",
+     "Tif34",
+     "Tif32",
+     "Nip1",
+     "Tif35"
+    ],
+    [
+     "Prt1",
+     "Tif34",
+     "Tif32",
+     "Tif35",
+     "Nip1"
+    ],
+    [
+     "Prt1",
+     "Tif34",
+     "Tif35",
+     "Tif32",
+     "Nip1"
+    ]
+   ],
+   "query_support": [
+    0,
+    6
+   ],
+   "naive_vs_flow": [
+    {
+     "history": [
+      "Prt1",
+      "Tif32",
+      "Nip1",
+      "Tif34",
+      "Tif35"
+     ],
+     "naive": "1/4",
+     "flow": "1/6"
+    },
+    {
+     "history": [
+      "Prt1",
+      "Tif32",
+      "Tif34",
+      "Nip1",
+      "Tif35"
+     ],
+     "naive": "1/8",
+     "flow": "1/6"
+    },
+    {
+     "history": [
+      "Prt1",
+      "Tif32",
+      "Tif34",
+      "Tif35",
+      "Nip1"
+     ],
+     "naive": "1/8",
+     "flow": "1/6"
+    },
+    {
+     "history": [
+      "Prt1",
+      "Tif34",
+      "Tif32",
+      "Nip1",
+      "Tif35"
+     ],
+     "naive": "1/8",
+     "flow": "1/6"
+    },
+    {
+     "history": [
+      "Prt1",
+      "Tif34",
+      "Tif32",
+      "Tif35",
+      "Nip1"
+     ],
+     "naive": "1/8",
+     "flow": "1/6"
+    },
+    {
+     "history": [
+      "Prt1",
+      "Tif34",
+      "Tif35",
+      "Tif32",
+      "Nip1"
+     ],
+     "naive": "1/4",
+     "flow": "1/6"
+    }
+   ]
+  },
+  "merger": {
+   "count": 14,
+   "query_support": [
+    5,
+    14
+   ],
+   "seed_caterpillars": 6,
+   "root_splits": {
+    "{Nip1} | {Prt1,Tif32,Tif34,Tif35}": 5,
+    "{Nip1,Tif32} | {Prt1,Tif34,Tif35}": 2,
+    "{Nip1,Prt1,Tif32} | {Tif34,Tif35}": 2,
+    "{Nip1,Prt1,Tif32,Tif34} | {Tif35}": 5
+   },
+   "crossing_count_patterns": {
+    "[1, 1, 1, 1]": 14
+   },
+   "multi_contact_sets": []
+  },
+  "perturbations": [
+   {
+    "removed": [
+     "Prt1",
+     "Tif32"
+    ],
+    "seeded": 0,
+    "merger": 0
+   },
+   {
+    "removed": [
+     "Prt1",
+     "Tif34"
+    ],
+    "seeded": 0,
+    "merger": 0
+   },
+   {
+    "removed": [
+     "Nip1",
+     "Tif32"
+    ],
+    "seeded": 0,
+    "merger": 0
+   },
+   {
+    "removed": [
+     "Tif34",
+     "Tif35"
+    ],
+    "seeded": 0,
+    "merger": 0
+   }
+  ]
+ },
+ "chain4": {
+  "model": "toy chain A-B-C-D",
+  "source": "Synthetic teaching model.",
+  "seed": "A",
+  "components": [
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "contacts": [
+   [
+    "A",
+    "B"
+   ],
+   [
+    "B",
+    "C"
+   ],
+   [
+    "C",
+    "D"
+   ]
+  ],
+  "independent_cycles": 0,
+  "query": [
+   "C",
+   "D"
+  ],
+  "all_orders_from_seed": 6,
+  "seeded": {
+   "count": 1,
+   "histories": [
+    [
+     "A",
+     "B",
+     "C",
+     "D"
+    ]
+   ],
+   "query_support": [
+    0,
+    1
+   ],
+   "naive_vs_flow": [
+    {
+     "history": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "naive": "1",
+     "flow": "1"
+    }
+   ]
+  },
+  "merger": {
+   "count": 5,
+   "query_support": [
+    2,
+    5
+   ],
+   "seed_caterpillars": 1,
+   "root_splits": {
+    "{A} | {B,C,D}": 2,
+    "{A,B} | {C,D}": 1,
+    "{A,B,C} | {D}": 2
+   },
+   "crossing_count_patterns": {
+    "[1, 1, 1]": 5
+   },
+   "multi_contact_sets": []
+  },
+  "perturbations": [
+   {
+    "removed": [
+     "A",
+     "B"
+    ],
+    "seeded": 0,
+    "merger": 0
+   },
+   {
+    "removed": [
+     "B",
+     "C"
+    ],
+    "seeded": 0,
+    "merger": 0
+   },
+   {
+    "removed": [
+     "C",
+     "D"
+    ],
+    "seeded": 0,
+    "merger": 0
+   }
+  ]
+ },
+ "cycle4": {
+  "model": "toy ring A-B-C-D-A",
+  "source": "Synthetic teaching model.",
+  "seed": "A",
+  "components": [
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "contacts": [
+   [
+    "A",
+    "B"
+   ],
+   [
+    "B",
+    "C"
+   ],
+   [
+    "C",
+    "D"
+   ],
+   [
+    "A",
+    "D"
+   ]
+  ],
+  "independent_cycles": 1,
+  "query": [
+   "C",
+   "D"
+  ],
+  "all_orders_from_seed": 6,
+  "seeded": {
+   "count": 4,
+   "histories": [
+    [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    [
+     "A",
+     "B",
+     "D",
+     "C"
+    ],
+    [
+     "A",
+     "D",
+     "B",
+     "C"
+    ],
+    [
+     "A",
+     "D",
+     "C",
+     "B"
+    ]
+   ],
+   "query_support": [
+    0,
+    4
+   ],
+   "naive_vs_flow": [
+    {
+     "history": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "naive": "1/4",
+     "flow": "1/4"
+    },
+    {
+     "history": [
+      "A",
+      "B",
+      "D",
+      "C"
+     ],
+     "naive": "1/4",
+     "flow": "1/4"
+    },
+    {
+     "history": [
+      "A",
+      "D",
+      "B",
+      "C"
+     ],
+     "naive": "1/4",
+     "flow": "1/4"
+    },
+    {
+     "history": [
+      "A",
+      "D",
+      "C",
+      "B"
+     ],
+     "naive": "1/4",
+     "flow": "1/4"
+    }
+   ]
+  },
+  "merger": {
+   "count": 10,
+   "query_support": [
+    3,
+    10
+   ],
+   "seed_caterpillars": 4,
+   "root_splits": {
+    "{A} | {B,C,D}": 2,
+    "{A,B} | {C,D}": 1,
+    "{A,D} | {B,C}": 1,
+    "{A,B,C} | {D}": 2,
+    "{A,B,D} | {C}": 2,
+    "{A,C,D} | {B}": 2
+   },
+   "crossing_count_patterns": {
+    "[1, 1, 2]": 10
+   },
+   "multi_contact_sets": [
+    [
+     "A-B",
+     "A-D"
+    ],
+    [
+     "A-B",
+     "B-C"
+    ],
+    [
+     "A-B",
+     "C-D"
+    ],
+    [
+     "A-D",
+     "B-C"
+    ],
+    [
+     "A-D",
+     "C-D"
+    ],
+    [
+     "B-C",
+     "C-D"
+    ]
+   ]
+  },
+  "perturbations": [
+   {
+    "removed": [
+     "A",
+     "B"
+    ],
+    "seeded": 1,
+    "merger": 5
+   },
+   {
+    "removed": [
+     "B",
+     "C"
+    ],
+    "seeded": 3,
+    "merger": 5
+   },
+   {
+    "removed": [
+     "C",
+     "D"
+    ],
+    "seeded": 3,
+    "merger": 5
+   },
+   {
+    "removed": [
+     "A",
+     "D"
+    ],
+    "seeded": 1,
+    "merger": 5
+   }
+  ]
+ }
+}

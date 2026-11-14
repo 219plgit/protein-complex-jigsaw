@@ -1,35 +1,46 @@
 #!/usr/bin/env bash
-# scijigsaw v3.0.0 — Phase 1 (GitHub release for submission)
-# Portable across macOS (BSD) and Linux (GNU). Run from the repository root.
+# Protein Complex Jigsaw v4.1.0 — release gate. Run from the repository root.
+# Portable across macOS (BSD) and Linux (GNU).
 set -euo pipefail
 
-VERSION="3.0.0"
+VERSION="4.1.0"
 TAG="v${VERSION}"
 
 # 0. sanity: clean tree, tests, version agreement
 git diff --quiet || { echo "uncommitted changes — commit first"; exit 1; }
 python -m pytest -q
 grep -q "version = \"${VERSION}\"" pyproject.toml || { echo "pyproject version mismatch"; exit 1; }
-grep -q "version: ${VERSION}" CITATION.cff || { echo "CITATION.cff version mismatch"; exit 1; }
+grep -q "version: \"${VERSION}\"" CITATION.cff || { echo "CITATION.cff version mismatch"; exit 1; }
+grep -q "__version__ = \"${VERSION}\"" src/pcjigsaw/__init__.py || { echo "package version mismatch"; exit 1; }
 
-# 1. reproduce the manuscript numbers (should be green before tagging)
-python reproduce_all.py
+# 1. reproduce the manuscript numbers
+python verify_paper.py
 
-# 2. set today's date in CITATION.cff (perl -pi is portable; macOS sed -i differs from GNU)
+# 2. the released wheel must regenerate the teaching material on its own:
+#    build it, install it in a clean environment and check every answer-key number
+rm -rf dist && python -m pip wheel . --no-deps -w dist -q
+VENV="$(mktemp -d)/venv"; RUN="$(mktemp -d)"
+python -m venv "${VENV}"
+# a clean environment: nothing from the checkout may leak onto the path
+env -u PYTHONPATH "${VENV}/bin/pip" install -q dist/protein_complex_jigsaw-${VERSION}-py3-none-any.whl
+( cd "${RUN}" && unset PYTHONPATH && "${VENV}/bin/pcjigsaw-teach" check \
+              && "${VENV}/bin/pcjigsaw-teach" vamp2 vamp2_pack >/dev/null \
+              && cmp vamp2_pack/vamp2_answers.json "${OLDPWD}/education/packs/vamp2/vamp2_answers.json" )
+echo "wheel reproduces the teaching answer keys"
+
+# 3. set today's date in CITATION.cff
 perl -pi -e "s/^date-released: .*/date-released: $(date +%F)/" CITATION.cff
 if ! git diff --quiet CITATION.cff; then
   git add CITATION.cff
   git commit -m "v${VERSION}: set release date"
 fi
 
-# 3. annotated tag + push
-git tag -a "${TAG}" -m "scijigsaw ${TAG}: evidence-weighted inference and hypothesis navigation (PLOS submission release)"
+# 4. annotated tag + push, GitHub release with the wheel attached
+git tag -a "${TAG}" -m "Protein Complex Jigsaw ${TAG}: PCJ Flow core, Method -> Tool -> Education"
 git push origin main --follow-tags
+gh release create "${TAG}" dist/protein_complex_jigsaw-${VERSION}-py3-none-any.whl \
+  --title "Protein Complex Jigsaw ${TAG}" \
+  --notes-file CHANGELOG_PCJ_FLOW_v4.1.0.md
 
-# 4. GitHub release from the prepared notes
-gh release create "${TAG}" \
-  --title "scijigsaw ${TAG} — evidence-weighted inference and hypothesis navigation" \
-  --notes-file RELEASE_NOTES_v3.0.0.md
-
-echo "Done. Release: https://github.com/219plgit/scijigsaw/releases/tag/${TAG}"
-echo "Phase 2 (Zenodo + DOI) happens after acceptance."
+echo "Done. Release: https://github.com/219plgit/protein-complex-jigsaw/releases/tag/${TAG}"
+echo "Zenodo archives the GitHub release automatically once the integration is enabled."

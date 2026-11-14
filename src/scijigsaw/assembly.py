@@ -167,8 +167,17 @@ class Assembly:
                     G.add_edge(unit, self.seed)
         return G
 
-    def n_orders_permitted(self) -> int:
+    def n_orders_permitted(self, contact_connected: bool = False) -> int:
         """Exact count of linear extensions, restricted by exclusion.
+
+        With `contact_connected=True` an addition is also required to have a
+        declared contact with the complex already present (seed included). This
+        is the seed-anchored definition of the manuscript, under which the
+        histories counted here are exactly the merger trees whose every merge
+        adds one component to the seed-containing branch (Proposition 1). For
+        legacy `requires` encodings every prerequisite is also a contact, so the
+        option changes nothing whenever each non-root unit has a requirement.
+        The default (False) keeps the historical seating semantics.
 
         f(S) = number of permitted orders seating exactly S. A unit u may be
         seated LAST in S iff R(u) is contained in S\\{u} (plus the seed) and no
@@ -216,6 +225,25 @@ class Assembly:
                 if req[j] >> i & 1:
                     dep[i] |= 1 << j
 
+        # contact masks for the optional contact-connected rule
+        con = [0] * n
+        seed_con = [False] * n
+        for fs in self._contacts:
+            e = tuple(fs)
+            if len(e) != 2:
+                continue
+            a_, b_ = e
+            if a_ in idx and b_ in idx:
+                con[idx[a_]] |= 1 << idx[b_]
+                con[idx[b_]] |= 1 << idx[a_]
+            elif self.seed is not None and a_ == self.seed and b_ in idx:
+                seed_con[idx[b_]] = True
+            elif self.seed is not None and b_ == self.seed and a_ in idx:
+                seed_con[idx[a_]] = True
+        has_seed = self.seed is not None
+        if has_seed and self.seed in idx:          # seed listed as a unit
+            seed_con[idx[self.seed]] = True
+
         # Lazy (memoised) evaluation: allocate only reachable states. Recursion
         # depth is bounded by n (one unit is removed per level).
         memo = {0: 1}
@@ -235,6 +263,9 @@ class Assembly:
                     continue
                 if dep[i] & rest:           # something left still requires i
                     continue
+                if contact_connected and not (con[i] & rest or seed_con[i]
+                                              or (rest == 0 and not has_seed)):
+                    continue                # i would not touch the complex
                 tot += f(rest)
             memo[S] = tot
             return tot

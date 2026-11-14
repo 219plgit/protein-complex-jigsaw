@@ -1,0 +1,427 @@
+{
+ "vamp2": {
+  "seed": "VAMP2",
+  "fusion_target": [
+   "VAMP2",
+   "Complexin",
+   "Munc18-1",
+   "SNAP25",
+   "SNCA",
+   "Synaptophysin",
+   "Syntaxin-1A",
+   "Syt-1"
+  ],
+  "core": [
+   "SNAP25",
+   "Syntaxin-1A",
+   "VAMP2"
+  ],
+  "core_contacts": [
+   "SNAP25\u2013Syntaxin-1A",
+   "SNAP25\u2013VAMP2",
+   "Syntaxin-1A\u2013VAMP2"
+  ],
+  "bridges": {
+   "Syt-1": [
+    "SNAP25",
+    "Syntaxin-1A"
+   ],
+   "Complexin": [
+    "Syntaxin-1A",
+    "VAMP2"
+   ]
+  },
+  "syt1_complexin_contact": false,
+  "accessories": {
+   "Munc18-1": [
+    "Syntaxin-1A"
+   ],
+   "SNCA": [
+    "VAMP2"
+   ],
+   "Synaptophysin": [
+    "VAMP2"
+   ]
+  },
+  "alternatives": {
+   "SNARE_motif": [
+    "AP180",
+    "CALM",
+    "SNAP25"
+   ]
+  },
+  "orders_total": 5040,
+  "orders_admissible": 252,
+  "orders_admissible_assembly": 252,
+  "orders_admissible_typed": 252,
+  "merger_trees_typed": 536,
+  "revision_1KIL": {
+   "before": 336,
+   "after": 252,
+   "complexin_before": [
+    "VAMP2",
+    "SNAP25"
+   ],
+   "complexin_after": [
+    "Syntaxin-1A",
+    "VAMP2"
+   ]
+  },
+  "core_first_orders": 120,
+  "syntaxin_requires": [
+   "SNAP25",
+   "VAMP2"
+  ],
+  "core_orders": [
+   [
+    "SNAP25",
+    "Syntaxin-1A"
+   ]
+  ],
+  "queries": [
+   {
+    "state": [
+     "VAMP2",
+     "SNAP25",
+     "Syntaxin-1A"
+    ],
+    "buildable": true,
+    "why": "buildable",
+    "histories_through_state": 120
+   },
+   {
+    "state": [
+     "VAMP2",
+     "Complexin"
+    ],
+    "buildable": false,
+    "why": "Complexin needs Syntaxin-1A, which is not in the state",
+    "histories_through_state": null
+   },
+   {
+    "state": [
+     "VAMP2",
+     "SNAP25",
+     "Syntaxin-1A",
+     "Syt-1",
+     "Complexin"
+    ],
+    "buildable": true,
+    "why": "buildable",
+    "histories_through_state": 12
+   },
+   {
+    "state": [
+     "VAMP2",
+     "AP180"
+    ],
+    "buildable": true,
+    "why": "buildable",
+    "histories_through_state": null
+   },
+   {
+    "state": [
+     "VAMP2",
+     "SNAP25",
+     "AP180"
+    ],
+    "buildable": false,
+    "why": "two components compete for the same site: AP180 / SNAP25",
+    "histories_through_state": null
+   },
+   {
+    "state": [
+     "VAMP2",
+     "AP180",
+     "CALM"
+    ],
+    "buildable": false,
+    "why": "two components compete for the same site: AP180 / CALM",
+    "histories_through_state": null
+   },
+   {
+    "state": [
+     "VAMP2",
+     "Syntaxin-1A",
+     "Munc18-1"
+    ],
+    "buildable": false,
+    "why": "Munc18-1 waits for Syntaxin-1A; Syntaxin-1A needs SNAP25, which is not in the state",
+    "histories_through_state": null
+   }
+  ],
+  "reward": {
+   "reported_gtex": {
+    "histories_admissible": 252,
+    "N_eff_v10": "57.8 \u00b1 18.4",
+    "N_eff_v8": "63.7 \u00b1 25.2",
+    "source": "main text (GTEx brain tissues; mean \u00b1 SD across tissues)"
+   },
+   "admissible_under_all_checked_priors": true,
+   "rescaling_invariant": true,
+   "checks": [
+    {
+     "admissible": 252,
+     "rescaling_max_change": 3.469446951953614e-17
+    },
+    {
+     "admissible": 252,
+     "rescaling_max_change": 1.3877787807814457e-17
+    },
+    {
+     "admissible": 252,
+     "rescaling_max_change": 4.163336342344337e-17
+    },
+    {
+     "admissible": 252,
+     "rescaling_max_change": 2.0816681711721685e-17
+    },
+    {
+     "admissible": 252,
+     "rescaling_max_change": 1.3877787807814457e-17
+    }
+   ]
+  }
+ },
+ "eif3": {
+  "model": "yeast eIF3 core (literature contacts)",
+  "source": "Contacts as encoded in the PCJ manuscript (Politis et al. 2015 topology). kd_nM and site columns are placeholders for the tile renderer and are not used in any count.",
+  "seed": "Prt1",
+  "components": [
+   "Prt1",
+   "Tif32",
+   "Nip1",
+   "Tif34",
+   "Tif35"
+  ],
+  "contacts": [
+   [
+    "Prt1",
+    "Tif32"
+   ],
+   [
+    "Prt1",
+    "Tif34"
+   ],
+   [
+    "Nip1",
+    "Tif32"
+   ],
+   [
+    "Tif34",
+    "Tif35"
+   ]
+  ],
+  "independent_cycles": 0,
+  "query": [
+   "Tif34",
+   "Tif35"
+  ],
+  "all_orders_from_seed": 24,
+  "seeded": {
+   "count": 6,
+   "histories": [
+    [
+     "Prt1",
+     "Tif32",
+     "Nip1",
+     "Tif34",
+     "Tif35"
+    ],
+    [
+     "Prt1",
+     "Tif32",
+     "Tif34",
+     "Nip1",
+     "Tif35"
+    ],
+    [
+     "Prt1",
+     "Tif32",
+     "Tif34",
+     "Tif35",
+     "Nip1"
+    ],
+    [
+     "Prt1",
+     "Tif34",
+     "Tif32",
+     "Nip1",
+     "Tif35"
+    ],
+    [
+     "Prt1",
+     "Tif34",
+     "Tif32",
+     "Tif35",
+     "Nip1"
+    ],
+    [
+     "Prt1",
+     "Tif34",
+     "Tif35",
+     "Tif32",
+     "Nip1"
+    ]
+   ],
+   "query_support": [
+    0,
+    6
+   ],
+   "naive_vs_flow": [
+    {
+     "history": [
+      "Prt1",
+      "Tif32",
+      "Nip1",
+      "Tif34",
+      "Tif35"
+     ],
+     "naive": "1/4",
+     "flow": "1/6"
+    },
+    {
+     "history": [
+      "Prt1",
+      "Tif32",
+      "Tif34",
+      "Nip1",
+      "Tif35"
+     ],
+     "naive": "1/8",
+     "flow": "1/6"
+    },
+    {
+     "history": [
+      "Prt1",
+      "Tif32",
+      "Tif34",
+      "Tif35",
+      "Nip1"
+     ],
+     "naive": "1/8",
+     "flow": "1/6"
+    },
+    {
+     "history": [
+      "Prt1",
+      "Tif34",
+      "Tif32",
+      "Nip1",
+      "Tif35"
+     ],
+     "naive": "1/8",
+     "flow": "1/6"
+    },
+    {
+     "history": [
+      "Prt1",
+      "Tif34",
+      "Tif32",
+      "Tif35",
+      "Nip1"
+     ],
+     "naive": "1/8",
+     "flow": "1/6"
+    },
+    {
+     "history": [
+      "Prt1",
+      "Tif34",
+      "Tif35",
+      "Tif32",
+      "Nip1"
+     ],
+     "naive": "1/4",
+     "flow": "1/6"
+    }
+   ]
+  },
+  "merger": {
+   "count": 14,
+   "query_support": [
+    5,
+    14
+   ],
+   "seed_caterpillars": 6,
+   "root_splits": {
+    "{Nip1} | {Prt1,Tif32,Tif34,Tif35}": 5,
+    "{Nip1,Tif32} | {Prt1,Tif34,Tif35}": 2,
+    "{Nip1,Prt1,Tif32} | {Tif34,Tif35}": 2,
+    "{Nip1,Prt1,Tif32,Tif34} | {Tif35}": 5
+   },
+   "crossing_count_patterns": {
+    "[1, 1, 1, 1]": 14
+   },
+   "multi_contact_sets": []
+  },
+  "perturbations": [
+   {
+    "removed": [
+     "Prt1",
+     "Tif32"
+    ],
+    "seeded": 0,
+    "merger": 0
+   },
+   {
+    "removed": [
+     "Prt1",
+     "Tif34"
+    ],
+    "seeded": 0,
+    "merger": 0
+   },
+   {
+    "removed": [
+     "Nip1",
+     "Tif32"
+    ],
+    "seeded": 0,
+    "merger": 0
+   },
+   {
+    "removed": [
+     "Tif34",
+     "Tif35"
+    ],
+    "seeded": 0,
+    "merger": 0
+   }
+  ]
+ },
+ "gflownet": {
+  "rows": [
+   [
+    "SNARE (1,242)",
+    "uniform",
+    "TV 1.6e-07\u20132.4e-07",
+    "trust"
+   ],
+   [
+    "SNARE (1,242)",
+    "rugged",
+    "TV 0.006\u20130.015",
+    "trust"
+   ],
+   [
+    "synthetic (3.6e8)",
+    "uniform",
+    "KL 0.014\u20130.020",
+    "trust"
+   ],
+   [
+    "synthetic (3.6e8)",
+    "rugged",
+    "log Z short by 1.8\u20131.9 nats; max error 0.51\u20130.54",
+    "do not trust"
+   ],
+   [
+    "synthetic (3.6e8)",
+    "rugged, 10k steps",
+    "log Z short by 0.49\u20130.76 nats; max error 0.15\u20130.19",
+    "do not trust"
+   ]
+  ]
+ }
+}

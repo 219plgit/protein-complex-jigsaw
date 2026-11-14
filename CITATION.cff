@@ -9,14 +9,13 @@ authors:
   - family-names: "Liò"
     given-names: "Maria Teresa"
     email: "maria.lio@edu.unifi.it"
-version: "4.0.0"
-date-released: "2026-10-18"
+version: "4.2.0rc1"
 url: "https://github.com/219plgit/protein-complex-jigsaw"
 repository-code: "https://github.com/219plgit/protein-complex-jigsaw"
 license: MIT
 preferred-citation:
   type: article
-  title: "Protein Complex Jigsaw: from typed evidence to inspectable assembly, variant perturbation and misassembly"
+  title: "Protein Complex Jigsaw: evidence-constrained exact and hierarchical inference of protein-complex assembly pathways"
   authors:
     - family-names: "Liò"
       given-names: "Pietro"
@@ -25,4 +24,4 @@ preferred-citation:
       given-names: "Maria Teresa"
       email: "maria.lio@edu.unifi.it"
   year: 2026
-  notes: "Manuscript submitted to PLOS Computational Biology; update journal metadata after acceptance."
+  notes: "Manuscript in preparation; journal metadata to be added on publication."

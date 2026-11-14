@@ -71,7 +71,10 @@ def canon(t):
 def space(model: TypedModel, seed: str) -> Dict:
     """Enumerate one model into a JSON-ready description."""
     nav = Navigator(model, seed)
-    hists = [list(h) for h, _ in nav.masses]
+    n_add = len([v for v in model.V if v != seed])
+    # keep complete histories only: an infeasible model has none (count 0),
+    # not a single empty path
+    hists = [list(h) for h, _ in nav.masses if len(h) == n_add]
     return {
         "histories": hists,
         "n": len(hists),
